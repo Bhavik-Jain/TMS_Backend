@@ -27,7 +27,7 @@ class Packages(models.Model):
 	updated_at = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return self.name
+		return str(self.name)
 
 class Bookings(models.Model):
 	STATUS = (
@@ -42,4 +42,4 @@ class Bookings(models.Model):
 	updated_at = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return self.user
+		return str(self.user)

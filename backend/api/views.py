@@ -50,10 +50,10 @@ class PackagesDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 
 class BookingsListAPIView(generics.ListCreateAPIView):
     serializer_class = BookingsSerializer
-    authentication_classes = [TokenAuthentication, ]
-    permission_classes = [IsAuthenticated, ]
+    # authentication_classes = [TokenAuthentication, ]
+    # permission_classes = [IsAuthenticated, ]
     def get_queryset(self):
-        queryset = Bookings.objects.filter(user=self.request.user)
+        queryset = Bookings.objects.all()
         return queryset
 
 class BookingsDetailAPIView(generics.RetrieveUpdateAPIView):
@@ -66,4 +66,3 @@ class BookingsDetailAPIView(generics.RetrieveUpdateAPIView):
         return queryset
 
 # csrf_exempt to allow other domains to access our api methods
-
